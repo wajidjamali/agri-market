@@ -2,9 +2,9 @@ const nodemailer = require("nodemailer");
 const { google } = require("googleapis");
 
 const oAuth2Client = new google.auth.OAuth2(
-  "124525833541-mb4dm49lt13gi6hfinv0cqh8bcbpn89u.apps.googleusercontent.com",
-  "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",
-  "https://developers.google.com/oauthplayground"
+  process.env.ONE,
+  process.env.TWO,
+  process.env.THREE
 );
 
 // Set the access token
@@ -20,11 +20,9 @@ const sendMail = async (options) => {
     auth: {
       type: "OAuth2",
       user: "moinulhaqshaikh2015@gmail.com",
-      clientId:
-        "124525833541-mb4dm49lt13gi6hfinv0cqh8bcbpn89u.apps.googleusercontent.com",
-      clientSecret: "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",
-      refreshToken:
-        "1//04TzFMo5Fr9ENCgYIARAAGAQSNwF-L9IrNhETzhiraJFWLfH1HBZz3AHfjS5WKZHrcllTbzLkAUpPSc8SYnKWwgGjar3fchApePc",
+      clientId: process.env.CLIENT_ID,
+      clientSecret: process.env.CLIENT_SECRET,
+      refreshToken: process.env.REFRESH_TOKEN,
       accessToken: oAuth2Client.getAccessToken(),
     },
   });
