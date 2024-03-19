@@ -9,12 +9,8 @@ const fileupload = require("express-fileupload");
 app.use(fileupload({ useTempFiles: true }));
 app.use(
   cors({
-    origin: [
-      "http://localhost:3000",
-      "http://localhost:4000",
-      "http://localhost:5173",
-    ],
-    credentials: true, // if needed
+    origin: "https://agri-market-eta.vercel.app/",
+    credentials: true,
   })
 );
 
